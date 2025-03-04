@@ -1,5 +1,4 @@
 'use strict';
-// https://github.com/garris/BackstopJS#advanced-scenarios
 
 const backstop = require('@mate-academy/backstop-config');
 const { basicScenario } = backstop;
@@ -8,6 +7,8 @@ const basic = {
   ...basicScenario,
   label: 'Elementary test',
   referenceUrl: basicScenario.referenceUrl + '/moyo-header/',
+  readySelector: 'header',
+  delay: 3000,
 };
 
 const config = {
@@ -44,7 +45,7 @@ const config = {
       label: 'Link with data-qa_hover',
       selectors: ['[data-qa="hover"]'],
       hoverSelector: '[data-qa="hover"]',
-      postInteractionWait: 1000,
+      postInteractionWait: 1500,
     },
     {
       ...basic,
@@ -56,3 +57,4 @@ const config = {
 };
 
 module.exports = config;
+
